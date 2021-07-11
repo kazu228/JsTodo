@@ -18,11 +18,14 @@
         <li>Todo 3<button>done</button></li>
     </ul>
     <script>
-        const button = document.querySelector('button');
-        const li = document.querySelector('li');
-        button.addEventListener('click', () => {
-                li.classList.add('done')
-        });
+        const buttonList = document.querySelectorAll('button');
+        [...buttonList].forEach((button) => {
+            console.log(button);
+        })
+        //const li = document.querySelector('li');
+        //button.addEventListener('click', () => {
+         //       li.classList.add('done')
+        //});
     </script>
 </body>
 </html>
