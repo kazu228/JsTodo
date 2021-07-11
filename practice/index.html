@@ -13,12 +13,20 @@
 </head>
 <body>
     <ul>
-        <li class="done">Todo 1<button>完了！！</button></li>
+        <li>Todo 1<button>完了！！</button></li>
         <li>Todo 2<button>完了！！</button></li>
         <li>Todo 3<button>完了！！</button></li>
     </ul>
     <script>
-        
+        const buttonList = document.querySelectorAll('button');
+        //console.log(buttons)
+        [...buttonList].forEach((button) => {
+            button.addEventListener('click', () => {
+                const li = button.closest('li');
+                li.classList.add('done');
+            });
+        });
+
     </script>
 </body>
 </html>
