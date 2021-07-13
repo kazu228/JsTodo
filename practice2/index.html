@@ -14,8 +14,17 @@
 <body>
     <ul>
         <li>Todo1<button>完了</button></li>
-        <li class="done">Todo2<button>完了</button></li>
+        <li>Todo2<button>完了</button></li>
         <li>Todo3<button>完了</button></li>
     </ul>
+    <script>
+        const buttonList = document.querySelectorAll('button');
+        [...buttonList].forEach((button) => {
+            button.addEventListener('click', () => {
+               const li = button.closest('li');
+               li.classList.add('done');
+            });
+        });
+    </script>
 </body>
 </html>
