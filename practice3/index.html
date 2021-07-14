@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsTodo</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>todo1<button>完了</button></li>
+        <li>todo2<button>完了</button></li>
+        <li>todo3<button>完了</button></li>
+    </ul>
+    <script>
+        const buttonList = document.querySelectorAll('button');
+        [...buttonList].forEach((button) => {
+            button.addEventListener('click', () => {
+                const li = button.closest('li');
+                li.classList.add('done');
+            });
+        })
+    </script>
+</body>
+</html>
