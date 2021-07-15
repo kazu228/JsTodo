@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsTodo</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <input type="text" id="new-todo"><button id="add-button">ADD</button>
+    <script>
+        const button = document.getElementById('add-button');
+        button.addEventListener('click', () => {
+            const input = document.getElementById('new-todo');
+            const li = document.createElement('li');
+            const doneButton = document.createElement('button');
+            const ul = document.querySelector('ul');
+
+            li.innerText = input.value;
+            li.appendChild(doneButton);
+
+            doneButton.innerText = "DONE";
+            doneButton.addEventListener('click', () => {
+                const closestLi = doneButton.closest('li');
+                closestLi.classList.add('done');
+            });
+            
+            ul.appendChild(li);
+        });
+    </script>
+</body>
+</html>
