@@ -18,7 +18,14 @@
     <script>
         const button = document.getElementById('add-button');
         button.addEventListener('click', () => {
+            const li = document.createElement('li');
+            const ul = document.querySelector('ul');
 
+            const input = document.getElementById('new-todo');
+
+            li.textContent = input.value;
+
+            
         });
     </script>
 </body>
