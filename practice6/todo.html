@@ -21,10 +21,19 @@
             const li = document.createElement('li');
             const ul = document.querySelector('ul');
 
+            const doneButton = document.createElement('button');
             const input = document.getElementById('new-todo');
 
             li.textContent = input.value;
+            doneButton.innerHTML = "Done";
 
+            ul.appendChild(li);
+            li.appendChild(doneButton);
+
+            doneButton.addEventListener('click', () => {
+                const closestLi = doneButton.closest('li');
+                closestLi.classList.add('done');
+            });
             
         });
     </script>
